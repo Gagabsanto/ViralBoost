@@ -1,22 +1,12 @@
-VIRALBOOST v2 — ARQUIVOS
+VIRALBOOST — REDESIGN
 
-1) Abra o painel do Supabase do projeto Impulso Viral.
-2) Vá em SQL Editor > New query.
-3) Abra supabase_setup.sql, copie TODO o conteúdo e execute (Run).
-4) Se aparecer sucesso, substitua o index.html do repositório GitHub Gagabsanto/ViralBoost pelo index.html desta pasta.
-5) Aguarde o GitHub Pages publicar e abra https://gagabsanto.github.io/ViralBoost/ .
+ARQUIVOS
+- index.html: substituir o arquivo index.html na raiz do repositório GitHub Gagabsanto/ViralBoost.
+- stats_patch.sql: executar uma vez no Supabase > SQL Editor > New query > Run. Cria uma função somente de leitura para exibir totais globais do mural, sem depender do filtro ou dos 100 vídeos carregados.
+- supabase_setup.sql: script original de configuração inicial. NÃO execute novamente se o banco já está funcionando.
 
-O index.html já está configurado com a URL e a chave publishable fornecidas. A chave publishable é pública; nunca coloque aqui uma secret/service_role key.
+CONTAGEM DE APOIOS
+O botão de coração registra um apoio dentro do ViralBoost. A função support_video grava a reação, aumenta posts.likes_count e credita +2 ViralCoins ao usuário, tudo no banco. Não lê nem altera curtidas reais do TikTok.
 
-REGRAS DA ECONOMIA
-- Cadastro: 20 ViralCoins iniciais.
-- Bônus diário: +2, uma vez por dia.
-- Apoiar outro vídeo: +2, uma única vez por vídeo e sem apoiar o próprio vídeo.
-- Publicar um vídeo: -5.
-
-IMPORTANTE
-- Execute o SQL antes de publicar o novo index.html.
-- Não apague o projeto Supabase.
-- O mural é público; saldos e histórico de moedas são privados.
-- A versão não oferece moedas por assistir/curtir/comentar no TikTok. As ações recompensadas acontecem dentro do ViralBoost.
-- Configure confirmação de e-mail em Authentication > Providers > Email conforme preferir. Se estiver ativada, o usuário precisa confirmar o e-mail antes de entrar.
+PUBLICAÇÃO
+Substitua apenas index.html no diretório raiz do repositório. Não envie a pasta inteira nem o ZIP para o GitHub Pages.
