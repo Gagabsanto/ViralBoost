@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#0b0b10">
+  <title>ViralBoost — Descubra novas edits</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root{--bg:#09090e;--panel:#12121a;--panel2:#191923;--line:#292936;--muted:#9999aa;--text:#f5f5fa;--purple:#a855f7;--pink:#ec4899;--green:#4ade80}
+    *{box-sizing:border-box}body{margin:0;background:radial-gradient(ellipse at 85% -10%,#30134a 0,transparent 34%),var(--bg);color:var(--text);font-family:"DM Sans",system-ui,sans-serif}
+    button,input,select,textarea{font:inherit}button{cursor:pointer}.wrap{max-width:1080px;margin:auto;padding:0 20px}
+    header{height:76px;border-bottom:1px solid #ffffff12;display:flex;align-items:center;position:sticky;top:0;background:#09090ee8;backdrop-filter:blur(18px);z-index:5}
+    .nav{display:flex;align-items:center;justify-content:space-between;width:100%}.brand{display:flex;align-items:center;gap:10px;font-weight:800;letter-spacing:-.6px;font-size:20px}.logo{height:34px;width:34px;border-radius:11px;background:linear-gradient(135deg,var(--purple),var(--pink));display:grid;place-items:center;box-shadow:0 5px 25px #a855f755}
+    .logo svg{width:19px}.tag{font-size:11px;color:#d8b4fe;border:1px solid #a855f755;background:#a855f718;padding:5px 9px;border-radius:99px;margin-left:3px}
+    .navright{color:var(--muted);font-size:13px}.hero{padding:54px 0 34px;display:grid;grid-template-columns:1.15fr .85fr;gap:35px;align-items:center}
+    .eyebrow{color:#d8b4fe;font-size:12px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase}.hero h1{font-size:clamp(36px,6vw,62px);line-height:1.02;letter-spacing:-2.8px;margin:13px 0 16px}.gradient{background:linear-gradient(90deg,#c084fc,#f0abfc,#fb7185);background-clip:text;color:transparent}
+    .hero p{color:#aaaabd;line-height:1.7;max-width:540px;margin:0;font-size:15px}.hero-card{background:linear-gradient(145deg,#1b1427,#11111a 65%);border:1px solid #a855f744;border-radius:22px;padding:22px;box-shadow:0 20px 70px #0008;transform:rotate(1deg)}
+    .mini-top{display:flex;justify-content:space-between;align-items:center;color:#bcbccc;font-size:12px}.live{color:#86efac;display:flex;gap:6px;align-items:center}.dot{height:7px;width:7px;background:var(--green);border-radius:50%}
+    .fake-video{margin:18px 0 14px;height:160px;border-radius:15px;background:radial-gradient(circle at 70% 25%,#7925a8,transparent 35%),linear-gradient(135deg,#26123e,#11111b 65%);display:grid;place-items:center;border:1px solid #ffffff14;position:relative;overflow:hidden}
+    .play{width:48px;height:48px;border-radius:50%;background:#ffffff20;backdrop-filter:blur(8px);display:grid;place-items:center;border:1px solid #ffffff40}.fake-video:after{content:"VIRALBOOST";position:absolute;bottom:12px;left:15px;font-size:10px;letter-spacing:3px;color:#ffffff70;font-weight:800}
+    .hero-stats{display:flex;gap:20px;color:#a7a7b8;font-size:12px}.hero-stats b{color:white;font-size:16px;display:block;margin-bottom:2px}
+    .section-head{display:flex;justify-content:space-between;align-items:end;margin:18px 0 15px;gap:15px}.section-head h2{margin:0;font-size:21px;letter-spacing:-.6px}.section-head p{margin:5px 0 0;color:var(--muted);font-size:12px}
+    .main-grid{display:grid;grid-template-columns:1fr 310px;gap:22px;padding-bottom:70px}.feed-tools{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:14px}.filter{background:transparent;border:1px solid var(--line);color:#b8b8c8;border-radius:99px;padding:8px 13px;font-size:12px}.filter.active{background:#a855f722;border-color:#a855f788;color:#e9d5ff}
+    .posts{display:grid;gap:12px}.post{background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:16px;display:grid;grid-template-columns:70px 1fr;gap:14px}.thumb{height:84px;width:70px;border-radius:11px;background:linear-gradient(145deg,#4c1d95,#171323 70%);display:grid;place-items:center;color:#e9d5ff}.post:nth-child(3n+2) .thumb{background:linear-gradient(145deg,#831843,#21121d 70%)}.post:nth-child(3n) .thumb{background:linear-gradient(145deg,#164e63,#111c25 70%)}
+    .post-top{display:flex;justify-content:space-between;gap:8px;align-items:center}.category{font-size:10px;color:#d8b4fe;background:#a855f71c;padding:5px 8px;border-radius:99px}.time{font-size:10px;color:#777789}.post h3{font-size:14px;margin:9px 0 5px}.post p{font-size:12px;color:#a5a5b5;line-height:1.5;margin:0 0 10px;overflow-wrap:anywhere}.post-actions{display:flex;gap:14px;align-items:center}.action{background:none;border:0;color:#aaaabc;font-size:11px;padding:0}.action:hover{color:#e9d5ff}.open-link{color:#d8b4fe;text-decoration:none;font-size:11px;font-weight:700}
+    aside{display:grid;align-content:start;gap:13px}.side-card{background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:17px}.side-card h3{font-size:14px;margin:0 0 12px}.side-card p{font-size:12px;line-height:1.6;color:#a4a4b5;margin:0}.steps{display:grid;gap:13px}.step{display:flex;gap:10px;align-items:flex-start}.num{height:23px;width:23px;flex:none;border-radius:8px;background:#a855f722;color:#d8b4fe;display:grid;place-items:center;font-size:11px;font-weight:700}.step b{font-size:12px;display:block;margin:1px 0 3px}.step span{font-size:11px;color:#9d9dae;line-height:1.5}
+    .submit-card{background:linear-gradient(145deg,#1d1430,#12121a);border:1px solid #a855f755;border-radius:18px;padding:19px;margin-bottom:18px}.submit-card h2{font-size:17px;margin:0 0 5px}.submit-card>p{font-size:12px;color:#aaaabd;margin:0 0 15px}.field{display:grid;gap:6px;margin:11px 0}.field label{font-size:11px;color:#c4c4d0;font-weight:600}.field input,.field select,.field textarea{width:100%;background:#0d0d14;border:1px solid #333342;border-radius:10px;color:white;padding:11px 12px;outline:none;font-size:12px}.field input:focus,.field select:focus,.field textarea:focus{border-color:#a855f7}.field textarea{resize:vertical;min-height:65px}.submit{width:100%;border:0;border-radius:10px;padding:12px;background:linear-gradient(90deg,#9333ea,#db2777);color:white;font-size:12px;font-weight:800;box-shadow:0 8px 22px #a855f733}.notice{font-size:10px;color:#9292a4;line-height:1.5;margin-top:10px}.empty{padding:30px;text-align:center;color:#9999aa;border:1px dashed #393947;border-radius:14px;font-size:13px}.toast{position:fixed;bottom:20px;left:50%;transform:translateX(-50%);background:#242432;border:1px solid #4b4b5e;color:white;padding:11px 16px;border-radius:10px;font-size:12px;display:none;z-index:9;box-shadow:0 10px 30px #0008}
+    footer{border-top:1px solid #ffffff12;padding:22px 0 35px;color:#777789;font-size:11px;line-height:1.7}.footer-inner{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
+    @media(max-width:760px){.hero{grid-template-columns:1fr;padding-top:38px;gap:22px}.hero-card{max-width:470px}.main-grid{grid-template-columns:1fr}.main-grid aside{grid-row:1}.side-card.community{display:none}.navright{display:none}.hero h1{letter-spacing:-1.8px}.section-head{align-items:start;flex-direction:column}.submit-card{margin-bottom:20px}}
+    @media(max-width:420px){.wrap{padding:0 14px}.post{grid-template-columns:58px 1fr;padding:12px;gap:11px}.thumb{width:58px;height:75px}.hero h1{font-size:39px}}
+  </style>
+</head>
+<body>
+<header><div class="wrap nav">
+  <div class="brand"><span class="logo"><svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2 4 14h7l-1 8 10-13h-7l0-7Z"/></svg></span>ViralBoost <span class="tag">FREE</span></div>
+  <div class="navright">Uma comunidade para descobrir novas edits</div>
+</div></header>
+<main class="wrap">
+  <section class="hero">
+    <div><div class="eyebrow">Sua próxima descoberta começa aqui</div><h1>Faça sua edit<br><span class="gradient">ser descoberta.</span></h1><p>Compartilhe seu vídeo, encontre criadores e descubra edits de outros usuários. Sem bots, sem visualizações falsas e sem pedir sua senha do TikTok.</p></div>
+    <div class="hero-card"><div class="mini-top"><span>VIRALBOOST / DISCOVER</span><span class="live"><i class="dot"></i> Comunidade</span></div><div class="fake-video"><div class="play">▶</div></div><div class="hero-stats"><div><b id="statPosts">0</b>vídeos enviados</div><div><b id="statLikes">0</b>curtidas locais</div><div><b>100%</b>sem bots</div></div></div>
+  </section>
+
+  <section class="submit-card">
+    <h2>🚀 Coloque sua edit na descoberta</h2><p>Adicione o link público do seu vídeo do TikTok.</p>
+    <form id="postForm">
+      <div class="field"><label for="videoUrl">LINK DO TIKTOK *</label><input id="videoUrl" type="url" placeholder="https://www.tiktok.com/@usuario/video/..." required></div>
+      <div class="field"><label for="title">TÍTULO DA EDIT *</label><input id="title" maxlength="65" placeholder="Ex.: Edit do Gojo — Jujutsu Kaisen" required></div>
+      <div class="field"><label for="category">CATEGORIA</label><select id="category"><option>Anime</option><option>Funk</option><option>Música</option><option>Filmes e séries</option><option> futebol</option><option>Outras edits</option></select></div>
+      <div class="field"><label for="description">DESCRIÇÃO (OPCIONAL)</label><textarea id="description" maxlength="180" placeholder="Conte um pouco sobre sua edit..."></textarea></div>
+      <button class="submit" type="submit">PUBLICAR NA DESCOBERTA ↗</button>
+      <div class="notice">Este protótipo salva os envios apenas neste navegador. Para aparecer para outros usuários, falta conectar o banco de dados online. Não informe sua senha do TikTok.</div>
+    </form>
+  </section>
+
+  <div class="section-head"><div><h2>Descobrir vídeos</h2><p>Edits compartilhadas pela comunidade.</p></div></div>
+  <div class="main-grid">
+    <section>
+      <div class="feed-tools" id="filters"><button class="filter active" data-filter="Todos">Todos</button><button class="filter" data-filter="Anime">Anime</button><button class="filter" data-filter="Funk">Funk</button><button class="filter" data-filter="Música">Música</button><button class="filter" data-filter="Filmes e séries">Filmes e séries</button><button class="filter" data-filter="Outras edits">Outras edits</button></div>
+      <div class="posts" id="posts"></div>
+    </section>
+    <aside>
+      <div class="side-card"><h3>Como funciona</h3><div class="steps"><div class="step"><div class="num">1</div><div><b>Envie o link</b><span>Compartilhe uma publicação pública do TikTok.</span></div></div><div class="step"><div class="num">2</div><div><b>Entre na descoberta</b><span>Seu vídeo aparece no mural deste protótipo.</span></div></div><div class="step"><div class="num">3</div><div><b>Compartilhe</b><span>Outras pessoas podem abrir o vídeo no TikTok.</span></div></div></div></div>
+      <div class="side-card community"><h3>Alcance real, sem atalhos falsos</h3><p>O ViralBoost não consegue controlar o algoritmo do TikTok nem garantir recomendações. A proposta é criar um espaço de descoberta entre pessoas que gostam de edits.</p></div>
+    </aside>
+  </div>
+</main>
+<footer><div class="wrap footer-inner"><span>© 2026 ViralBoost · Projeto independente</span><span>Não afiliado ao TikTok. TikTok é marca de seus respectivos proprietários.</span></div></footer>
+<div class="toast" id="toast"></div>
+<script>
+const KEY='viralboost_posts_v1', LIKES='viralboost_likes_v1';
+let filter='Todos';
+const $=id=>document.getElementById(id);
+function getPosts(){try{return JSON.parse(localStorage.getItem(KEY)||'[]')}catch{return []}}
+function setPosts(p){localStorage.setItem(KEY,JSON.stringify(p))}
+function getLikes(){try{return JSON.parse(localStorage.getItem(LIKES)||'{}')}catch{return {}}}
+function toast(msg){const t=$('toast');t.textContent=msg;t.style.display='block';clearTimeout(window.toastTimer);window.toastTimer=setTimeout(()=>t.style.display='none',2800)}
+function validTikTok(url){try{const u=new URL(url);return ['tiktok.com','www.tiktok.com','m.tiktok.com','vm.tiktok.com','vt.tiktok.com'].includes(u.hostname)}catch{return false}}
+function safe(s){return String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]))}
+function render(){
+ const all=getPosts(), likes=getLikes(), shown=filter==='Todos'?all:all.filter(p=>p.category===filter);
+ $('statPosts').textContent=all.length;
+ $('statLikes').textContent=Object.values(likes).reduce((a,b)=>a+b,0);
+ $('posts').innerHTML=shown.length?shown.slice().reverse().map(p=>`<article class="post"><div class="thumb"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M9 18V5l12-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="16" r="3"/></svg></div><div><div class="post-top"><span class="category">${safe(p.category)}</span><span class="time">${safe(p.date)}</span></div><h3>${safe(p.title)}</h3><p>${safe(p.description||'Vídeo compartilhado pela comunidade.')}</p><div class="post-actions"><button class="action" data-like="${p.id}">♡ ${likes[p.id]||0} apoio(s)</button><a class="open-link" href="${safe(p.url)}" target="_blank" rel="noopener noreferrer">ABRIR NO TIKTOK ↗</a></div></div></article>`).join(''):'<div class="empty">Ainda não há vídeos nesta categoria. Seja o primeiro a compartilhar sua edit.</div>';
+}
+$('postForm').addEventListener('submit',e=>{
+ e.preventDefault();const url=$('videoUrl').value.trim(),title=$('title').value.trim();
+ if(!validTikTok(url)){toast('Use um link válido do TikTok.');return}
+ if(!title){toast('Adicione um título para sua edit.');return}
+ const posts=getPosts();posts.push({id:Date.now().toString(),url,title,category:$('category').value.trim(),description:$('description').value.trim(),date:new Date().toLocaleDateString('pt-BR')});
+ setPosts(posts);$('postForm').reset();render();toast('Vídeo adicionado neste navegador!');
+});
+$('filters').addEventListener('click',e=>{const b=e.target.closest('[data-filter]');if(!b)return;filter=b.dataset.filter;document.querySelectorAll('.filter').forEach(x=>x.classList.toggle('active',x===b));render()});
+$('posts').addEventListener('click',e=>{const b=e.target.closest('[data-like]');if(!b)return;const likes=getLikes();likes[b.dataset.like]=(likes[b.dataset.like]||0)+1;localStorage.setItem(LIKES,JSON.stringify(likes));render()});
+render();
+</script>
+</body></html>
